@@ -1,0 +1,24 @@
+Nguyen Tri Dung
+Software Engineer / Computer Science Student
+
+Focus
+- Backend Engineering
+- AI Applications
+- Scalable Systems
+
+Core Stack
+- Go
+- React
+- TypeScript
+- Spring Boot
+- PostgreSQL
+- Docker
+- FastAPI
+- Python
+
+Featured Projects
+- Student Focus AI: AI-powered classroom attention monitoring system with face recognition, real-time focus detection, FastAPI backend, and React dashboard.
+- Recruitment Fanpage Platform: Spring Boot backend with PostgreSQL, JWT authentication, role-based access control, and email OTP verification.
+- AI Chatbot System: Intent detection, knowledge retrieval, NLP, and scalable backend architecture.
+
+Replace this file with your final PDF resume when available.
