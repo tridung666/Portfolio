@@ -1,5 +1,5 @@
-import { BriefcaseBusiness, Code2 } from 'lucide-react';
 import { owner } from '../data/portfolio';
+import { GitHubIcon, LinkedInIcon } from './BrandIcons';
 
 export function Footer(): React.ReactElement {
   return (
@@ -14,7 +14,7 @@ export function Footer(): React.ReactElement {
             className="transition hover:text-white"
             aria-label="Open GitHub profile"
           >
-            <Code2 size={18} />
+            <GitHubIcon size={18} />
           </a>
           <a
             href={owner.socials.linkedin}
@@ -23,7 +23,7 @@ export function Footer(): React.ReactElement {
             className="transition hover:text-white"
             aria-label="Open LinkedIn profile"
           >
-            <BriefcaseBusiness size={18} />
+            <LinkedInIcon className="text-[#0a66c2]" size={18} />
           </a>
         </div>
       </div>

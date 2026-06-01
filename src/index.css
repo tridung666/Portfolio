@@ -33,6 +33,11 @@
       #050505;
   }
 
+  #root {
+    isolation: isolate;
+    min-height: 100vh;
+  }
+
   button,
   input,
   textarea {

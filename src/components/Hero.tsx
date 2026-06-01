@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, BriefcaseBusiness, Code2, Download, Sparkles } from 'lucide-react';
-import heroImage from '../assets/engineer-workspace.png';
+import { ArrowDown, Download, Sparkles } from 'lucide-react';
+import heroImage from '../assets/mypicture.png';
 import { focusCards, owner } from '../data/portfolio';
+import { GitHubIcon, LinkedInIcon } from './BrandIcons';
 
 export function Hero(): React.ReactElement {
   return (
     <section id="hero" className="section-shell flex min-h-screen items-center pt-28">
-      <div className="grid w-full items-center gap-12 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:py-20">
+      <div className="grid w-full items-center gap-10 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
         <motion.div
           initial={false}
           animate={{ opacity: 1, y: 0 }}
@@ -16,7 +17,7 @@ export function Hero(): React.ReactElement {
             <Sparkles size={16} />
             Backend engineering meets applied AI
           </div>
-          <h1 className="text-balance text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-balance text-5xl font-semibold leading-[0.98] text-white sm:text-7xl lg:text-[5.7rem] xl:text-[6.5rem]">
             {owner.name}
             <span className="gradient-text block">
               builds scalable <span className="block sm:inline">software.</span>
@@ -52,7 +53,7 @@ export function Hero(): React.ReactElement {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-lg px-1 py-2 text-sm font-semibold text-zinc-300 transition hover:text-white"
             >
-              <Code2 size={18} />
+              <GitHubIcon size={18} />
               GitHub
             </a>
             <a
@@ -61,7 +62,7 @@ export function Hero(): React.ReactElement {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-lg px-1 py-2 text-sm font-semibold text-zinc-300 transition hover:text-white"
             >
-              <BriefcaseBusiness size={18} />
+              <LinkedInIcon className="text-[#0a66c2]" size={18} />
               LinkedIn
             </a>
           </div>
@@ -82,29 +83,11 @@ export function Hero(): React.ReactElement {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.12, ease: 'easeOut' }}
         >
-          <div className="premium-ring relative overflow-hidden rounded-lg border border-white/12 bg-zinc-950/70">
-            <img
-              src={heroImage}
-              alt="Dark premium software engineering workspace with code panels and AI system visuals"
-              className="aspect-[4/3] h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/72 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 grid gap-3 sm:grid-cols-3">
-              {['API', 'AI', 'Scale'].map((label) => (
-                <div key={label} className="rounded-lg border border-white/12 bg-black/38 px-3 py-3 backdrop-blur-xl">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">{label}</p>
-                  <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-emerald-300 to-cyan-300"
-                      initial={{ width: '22%' }}
-                      animate={{ width: label === 'API' ? '88%' : label === 'AI' ? '78%' : '84%' }}
-                      transition={{ duration: 1.4, delay: 0.6, ease: 'easeOut' }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <img
+            src={heroImage}
+            alt={`${owner.name} illustrated portrait`}
+            className="mx-auto w-full max-w-[620px] object-contain drop-shadow-[0_28px_70px_rgba(0,0,0,0.58)] sm:max-w-[760px] lg:w-[118%] lg:max-w-none xl:w-[128%]"
+          />
         </motion.div>
       </div>
     </section>

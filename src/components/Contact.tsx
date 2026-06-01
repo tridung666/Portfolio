@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { BriefcaseBusiness, Code2, Mail, MapPin, Send } from 'lucide-react';
+import { MapPin, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { owner } from '../data/portfolio';
+import { GitHubIcon, GmailIcon, LinkedInIcon } from './BrandIcons';
 import { SectionHeading } from './SectionHeading';
 
 export function Contact(): React.ReactElement {
@@ -36,7 +37,7 @@ export function Contact(): React.ReactElement {
               href="mailto:hello@example.com"
               className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-white/[0.08] hover:text-white"
             >
-              <Mail size={18} className="text-emerald-200" />
+              <GmailIcon size={20} />
               hello@example.com
             </a>
             <div className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-zinc-200">
@@ -49,7 +50,7 @@ export function Contact(): React.ReactElement {
               rel="noreferrer"
               className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-white/[0.08] hover:text-white"
             >
-              <Code2 size={18} className="text-zinc-100" />
+              <GitHubIcon className="text-zinc-100" size={20} />
               GitHub profile
             </a>
             <a
@@ -58,7 +59,7 @@ export function Contact(): React.ReactElement {
               rel="noreferrer"
               className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-white/[0.08] hover:text-white"
             >
-              <BriefcaseBusiness size={18} className="text-sky-200" />
+              <LinkedInIcon className="text-[#0a66c2]" size={20} />
               LinkedIn profile
             </a>
           </div>

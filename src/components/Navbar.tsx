@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { BriefcaseBusiness, Code2, Download, Menu, X } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { navItems, owner } from '../data/portfolio';
+import { GitHubIcon, LinkedInIcon } from './BrandIcons';
 
 export function Navbar(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ export function Navbar(): React.ReactElement {
             className="grid size-10 place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-zinc-300 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             aria-label="Open GitHub profile"
           >
-            <Code2 size={18} />
+            <GitHubIcon size={20} />
           </a>
           <a
             href={owner.socials.linkedin}
@@ -50,7 +51,7 @@ export function Navbar(): React.ReactElement {
             className="grid size-10 place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-zinc-300 transition hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             aria-label="Open LinkedIn profile"
           >
-            <BriefcaseBusiness size={18} />
+            <LinkedInIcon className="text-[#0a66c2]" size={20} />
           </a>
           <a
             href={owner.resumeHref}
@@ -100,7 +101,7 @@ export function Navbar(): React.ReactElement {
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-3 py-3 text-sm font-semibold text-white"
                 >
-                  <Code2 size={17} />
+                  <GitHubIcon size={18} />
                   GitHub
                 </a>
                 <a
@@ -109,7 +110,7 @@ export function Navbar(): React.ReactElement {
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-3 py-3 text-sm font-semibold text-white"
                 >
-                  <BriefcaseBusiness size={17} />
+                  <LinkedInIcon className="text-[#0a66c2]" size={18} />
                   LinkedIn
                 </a>
               </div>
