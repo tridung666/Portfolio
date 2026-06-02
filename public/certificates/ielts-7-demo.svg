@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">IELTS Academic Band 7.0 demo certificate</title>
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  <rect x="58" y="58" width="1084" height="684" rx="20" fill="#ffffff" stroke="#0f766e" stroke-width="8"/>
+  <rect x="98" y="98" width="1004" height="604" rx="12" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <text x="600" y="190" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">IELTS Academic</text>
+  <text x="600" y="255" text-anchor="middle" fill="#0f766e" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Demo Certificate Placeholder</text>
+  <text x="600" y="370" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="34">Overall Band Score</text>
+  <text x="600" y="475" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="900">7.0</text>
+  <text x="600" y="585" text-anchor="middle" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="26">Replace this file with the real IELTS certificate image later.</text>
+  <text x="600" y="650" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="20">Portfolio download demo</text>
+</svg>

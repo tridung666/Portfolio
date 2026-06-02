@@ -1,11 +1,11 @@
 import {
+  Award,
   Bot,
   BrainCircuit,
   Code2,
   Database,
   Fingerprint,
   GraduationCap,
-  Layers3,
   LockKeyhole,
   MailCheck,
   MonitorCheck,
@@ -13,7 +13,6 @@ import {
   Rocket,
   ServerCog,
   ShieldCheck,
-  Workflow,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -22,11 +21,18 @@ export interface NavItem {
   href: string;
 }
 
+export interface SkillItem {
+  name: string;
+  logoUrl?: string;
+  fallbackIcon?: LucideIcon;
+  brandColor?: string;
+}
+
 export interface SkillGroup {
   title: string;
   description: string;
   icon: LucideIcon;
-  skills: string[];
+  skills: SkillItem[];
 }
 
 export interface Project {
@@ -43,8 +49,17 @@ export interface TimelineItem {
   title: string;
   organization: string;
   period: string;
-  description: string;
-  points: string[];
+  logoUrl: string;
+  summary: string;
+  metrics?: string[];
+  icon: LucideIcon;
+}
+
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  result: string;
+  downloadHref: string;
   icon: LucideIcon;
 }
 
@@ -66,6 +81,7 @@ export const navItems: NavItem[] = [
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
+  { label: 'Certificates', href: '#certificates' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -84,30 +100,57 @@ export const focusCards = [
   },
 ];
 
+const simpleIcon = (slug: string, color: string): string => `https://cdn.simpleicons.org/${slug}/${color}`;
+
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Backend Engineering',
     description: 'Service design, domain modeling, APIs, authentication, and production-minded data flows.',
     icon: ServerCog,
-    skills: ['Go', 'Spring Boot', 'FastAPI', 'Python', 'REST APIs', 'JWT'],
+    skills: [
+      { name: 'Go', logoUrl: simpleIcon('go', '00ADD8'), brandColor: '#00ADD8' },
+      { name: 'Spring Boot', logoUrl: simpleIcon('springboot', '6DB33F'), brandColor: '#6DB33F' },
+      { name: 'FastAPI', logoUrl: simpleIcon('fastapi', '009688'), brandColor: '#009688' },
+      { name: 'Python', logoUrl: simpleIcon('python', '3776AB'), brandColor: '#3776AB' },
+      { name: 'REST APIs', logoUrl: simpleIcon('openapiinitiative', '6BA539'), brandColor: '#6BA539' },
+      { name: 'JWT', logoUrl: simpleIcon('jsonwebtokens', 'D63AFF'), brandColor: '#D63AFF' },
+    ],
   },
   {
     title: 'Frontend Systems',
     description: 'Typed React dashboards with responsive interfaces and clean interaction states.',
     icon: Code2,
-    skills: ['React', 'TypeScript', 'Tailwind CSS', 'React Router', 'Framer Motion'],
+    skills: [
+      { name: 'React', logoUrl: simpleIcon('react', '61DAFB'), brandColor: '#61DAFB' },
+      { name: 'TypeScript', logoUrl: simpleIcon('typescript', '3178C6'), brandColor: '#3178C6' },
+      { name: 'Tailwind CSS', logoUrl: simpleIcon('tailwindcss', '06B6D4'), brandColor: '#06B6D4' },
+      { name: 'React Router', logoUrl: simpleIcon('reactrouter', 'CA4245'), brandColor: '#CA4245' },
+      { name: 'Framer Motion', logoUrl: simpleIcon('framer', 'FFFFFF'), brandColor: '#FFFFFF' },
+    ],
   },
   {
     title: 'Data & Infrastructure',
     description: 'Reliable persistence, deployment-ready containers, and practical engineering workflows.',
     icon: Database,
-    skills: ['PostgreSQL', 'Docker', 'SQL', 'Schema Design', 'API Integration'],
+    skills: [
+      { name: 'PostgreSQL', logoUrl: simpleIcon('postgresql', '4169E1'), brandColor: '#4169E1' },
+      { name: 'Docker', logoUrl: simpleIcon('docker', '2496ED'), brandColor: '#2496ED' },
+      { name: 'SQL', logoUrl: simpleIcon('sqlite', '003B57'), brandColor: '#0EA5E9' },
+      { name: 'Schema Design', fallbackIcon: Database, brandColor: '#22C55E' },
+      { name: 'API Integration', logoUrl: simpleIcon('swagger', '85EA2D'), brandColor: '#85EA2D' },
+    ],
   },
   {
     title: 'AI Applications',
     description: 'Applied AI features that connect model outputs with useful product experiences.',
     icon: BrainCircuit,
-    skills: ['NLP', 'Intent Detection', 'Knowledge Retrieval', 'Face Recognition', 'Focus Detection'],
+    skills: [
+      { name: 'NLP', logoUrl: simpleIcon('openai', 'FFFFFF'), brandColor: '#FFFFFF' },
+      { name: 'Intent Detection', fallbackIcon: BrainCircuit, brandColor: '#A78BFA' },
+      { name: 'Knowledge Retrieval', fallbackIcon: Network, brandColor: '#38BDF8' },
+      { name: 'Face Recognition', fallbackIcon: Fingerprint, brandColor: '#34D399' },
+      { name: 'Focus Detection', fallbackIcon: MonitorCheck, brandColor: '#FBBF24' },
+    ],
   },
 ];
 
@@ -158,59 +201,55 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
-    title: 'Software Engineer / Computer Science Student',
-    organization: 'Academic and independent engineering work',
-    period: 'Current',
-    description:
-      'Building backend-heavy applications that combine secure APIs, practical AI features, and polished product interfaces.',
-    points: [
-      'Designing REST services with authentication, authorization, and database persistence',
-      'Connecting AI model workflows to usable dashboards and business logic',
-      'Practicing production habits across code structure, containers, and typed frontend development',
-    ],
+    title: 'Software Engineer',
+    organization: 'FAR EAST FOOD INDUSTRY COMPANY LIMITED',
+    period: 'Jan 2026 - Present',
+    logoUrl: '/logovd.jpg',
+    summary: 'Built recruitment systems for company hiring operations, supporting high-volume applicant intake and hiring outcomes.',
+    metrics: ['1,000+ applicants', '30+ hires'],
     icon: Rocket,
   },
   {
-    title: 'Backend & AI Application Builder',
-    organization: 'Project-based systems',
-    period: '2024 - Present',
-    description:
-      'Focused on translating AI ideas into working systems with clear boundaries between model logic, APIs, and user-facing data.',
-    points: [
-      'Built FastAPI and Spring Boot services around concrete product workflows',
-      'Worked with PostgreSQL schemas for authentication, roles, and application data',
-      'Explored NLP, computer vision, and retrieval patterns in applied systems',
-    ],
-    icon: Workflow,
-  },
-  {
-    title: 'Full-stack Product Developer',
-    organization: 'Portfolio projects',
-    period: '2023 - Present',
-    description:
-      'Created recruiter-friendly web interfaces that make complex backend and AI capabilities easier to inspect.',
-    points: [
-      'Implemented React dashboards with TypeScript and responsive layouts',
-      'Used Docker-oriented workflows to keep local development repeatable',
-      'Balanced clean UI with practical system details and project storytelling',
-    ],
-    icon: Layers3,
+    title: 'Software Engineer Intern',
+    organization: 'Ban Vien Company',
+    period: 'Aug 2025 - Dec 2025',
+    logoUrl: '/banvien-logo.svg',
+    summary: 'Contributed to the company internal human resource management system during the internship.',
+    icon: ServerCog,
   },
 ];
 
 export const education = {
-  title: 'Computer Science Student',
-  subtitle: 'Software engineering, backend systems, and applied AI',
+  title: 'Graduated from International University (VNU-HCM)',
+  subtitle: 'Computer Science - GPA: 3.6/4.0',
   icon: GraduationCap,
   topics: [
-    'Data structures and algorithms',
-    'Database systems',
-    'Web application architecture',
-    'Software design principles',
-    'Machine learning fundamentals',
-    'Distributed systems foundations',
+    'Artificial Intelligence',
+    'Principles of Database Management',
+    'Software Engineering',
+    'Algorithms & Data Structures',
+    'Web Application Development',
+    'Computer Architecture',
+    'Computer Networks',
   ],
 };
+
+export const certificates: CertificateItem[] = [
+  {
+    title: 'IELTS Academic',
+    issuer: 'English Proficiency',
+    result: 'Band 7.0',
+    downloadHref: '/certificates/ielts-7-demo.svg',
+    icon: Award,
+  },
+  {
+    title: 'HSK Level 4',
+    issuer: 'Chinese Proficiency',
+    result: 'HSK 4',
+    downloadHref: '/certificates/hsk4-demo.svg',
+    icon: Award,
+  },
+];
 
 export const principles = [
   {

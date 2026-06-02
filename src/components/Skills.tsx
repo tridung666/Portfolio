@@ -1,6 +1,26 @@
 import { motion } from 'framer-motion';
-import { skillGroups } from '../data/portfolio';
+import { skillGroups, type SkillItem } from '../data/portfolio';
 import { SectionHeading } from './SectionHeading';
+
+function SkillLogo({ skill }: { skill: SkillItem }): React.ReactElement {
+  const FallbackIcon = skill.fallbackIcon;
+
+  return (
+    <div
+      className="grid size-10 shrink-0 place-items-center rounded-lg border bg-zinc-950/65"
+      style={{
+        borderColor: skill.brandColor ? `${skill.brandColor}55` : 'rgba(255, 255, 255, 0.12)',
+        boxShadow: skill.brandColor ? `0 0 24px ${skill.brandColor}18` : undefined,
+      }}
+    >
+      {skill.logoUrl ? (
+        <img src={skill.logoUrl} alt={`${skill.name} logo`} className="size-5 object-contain" loading="lazy" />
+      ) : FallbackIcon ? (
+        <FallbackIcon size={20} color={skill.brandColor} />
+      ) : null}
+    </div>
+  );
+}
 
 export function Skills(): React.ReactElement {
   return (
@@ -34,14 +54,15 @@ export function Skills(): React.ReactElement {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-sm font-medium text-zinc-200"
+                  <div
+                    key={skill.name}
+                    className="flex min-h-14 items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]"
                   >
-                    {skill}
-                  </span>
+                    <SkillLogo skill={skill} />
+                    <span className="text-sm font-semibold leading-5 text-zinc-100">{skill.name}</span>
+                  </div>
                 ))}
               </div>
             </motion.article>

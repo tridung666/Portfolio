@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">HSK Level 4 demo certificate</title>
+  <rect width="1200" height="800" fill="#fff7ed"/>
+  <rect x="58" y="58" width="1084" height="684" rx="20" fill="#ffffff" stroke="#dc2626" stroke-width="8"/>
+  <rect x="98" y="98" width="1004" height="604" rx="12" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <text x="600" y="190" text-anchor="middle" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">HSK Chinese Proficiency</text>
+  <text x="600" y="255" text-anchor="middle" fill="#dc2626" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Demo Certificate Placeholder</text>
+  <text x="600" y="370" text-anchor="middle" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="34">Certified Level</text>
+  <text x="600" y="475" text-anchor="middle" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="900">HSK 4</text>
+  <text x="600" y="585" text-anchor="middle" fill="#6b7280" font-family="Arial, Helvetica, sans-serif" font-size="26">Replace this file with the real HSK certificate image later.</text>
+  <text x="600" y="650" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="20">Portfolio download demo</text>
+</svg>

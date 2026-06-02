@@ -10,8 +10,8 @@ export function Education(): React.ReactElement {
     <section id="education" className="section-shell py-24">
       <SectionHeading
         eyebrow="Education"
-        title="Computer science foundations with a software engineering bias."
-        description="The academic foundation supports the systems work: algorithms, databases, software design, AI fundamentals, and web architecture."
+        title="Computer Science graduate from International University (VNU-HCM)."
+        description="GPA: 3.6/4.0, with academic focus across AI, database management, software engineering, algorithms, web systems, computer architecture, and computer networks."
       />
 
       <motion.div

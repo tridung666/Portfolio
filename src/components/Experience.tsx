@@ -7,8 +7,8 @@ export function Experience(): React.ReactElement {
     <section id="experience" className="section-shell py-24">
       <SectionHeading
         eyebrow="Experience"
-        title="A timeline built around project ownership and engineering maturity."
-        description="The experience section is written for recruiters to understand what I can own: backend services, AI workflows, secure product flows, and typed interfaces."
+        title="Software engineering experience across HR systems and recruitment products."
+        description="Concise work history focused on the systems built, production tools used, and measurable hiring impact."
       />
 
       <div className="relative mx-auto max-w-4xl">
@@ -29,22 +29,31 @@ export function Experience(): React.ReactElement {
                 <div className="absolute -left-[4.15rem] top-7 hidden size-11 place-items-center rounded-lg border border-emerald-300/30 bg-[#050505] text-emerald-200 md:grid">
                   <Icon size={20} />
                 </div>
-                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">{item.period}</p>
-                    <h3 className="mt-3 text-2xl font-semibold text-white">{item.title}</h3>
-                    <p className="mt-1 text-sm font-medium text-zinc-400">{item.organization}</p>
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                  <div className="flex gap-4">
+                    <div className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-lg border border-white/15 bg-white p-2">
+                      <img src={item.logoUrl} alt={`${item.organization} logo`} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">{item.period}</p>
+                      <h3 className="mt-3 text-2xl font-semibold text-white">{item.title}</h3>
+                      <p className="mt-1 text-sm font-medium uppercase tracking-[0.08em] text-zinc-400">{item.organization}</p>
+                    </div>
                   </div>
+                  {item.metrics ? (
+                    <div className="flex flex-wrap gap-2 md:justify-end">
+                      {item.metrics.map((metric) => (
+                        <span
+                          key={metric}
+                          className="rounded-lg border border-emerald-300/25 bg-emerald-300/10 px-3 py-2 text-xs font-bold text-emerald-100"
+                        >
+                          {metric}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
-                <p className="mt-5 text-sm leading-7 text-zinc-300">{item.description}</p>
-                <ul className="mt-5 grid gap-3">
-                  {item.points.map((point) => (
-                    <li key={point} className="flex gap-3 text-sm leading-6 text-zinc-400">
-                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-300" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-5 text-sm leading-7 text-zinc-300">{item.summary}</p>
               </motion.article>
             );
           })}

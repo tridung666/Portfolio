@@ -1,5 +1,6 @@
 import { About } from '../components/About';
 import { AnimatedBackground } from '../components/AnimatedBackground';
+import { Certificates } from '../components/Certificates';
 import { Contact } from '../components/Contact';
 import { Education } from '../components/Education';
 import { Experience } from '../components/Experience';
@@ -21,6 +22,7 @@ export function Home(): React.ReactElement {
         <Projects />
         <Experience />
         <Education />
+        <Certificates />
         <Contact />
       </main>
       <Footer />
